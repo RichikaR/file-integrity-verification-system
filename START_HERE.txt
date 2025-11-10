@@ -1,0 +1,152 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         FILE INTEGRITY VERIFICATION SYSTEM                       ║
+║         Computer Networks Project                                ║
+║                                                                  ║
+║         Richika Rani (24BCE1498) & Nandani (24BCE1491)          ║
+║         Guide: Dr. Swaminathan A                                 ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📋 QUICK START - READ THIS FIRST!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 STEP 1: START THE BACKEND SERVER
+
+Open a new terminal/command prompt and run:
+
+   cd server
+   node index.js
+
+You should see: "Server running on port 3001"
+
+⚠️  IMPORTANT: Keep this terminal running!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 STEP 2: FRONTEND IS AUTO-STARTED
+
+The frontend development server starts automatically!
+Access it at: http://localhost:5173
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 HOW TO USE THE APPLICATION
+
+┌──────────────────────────────────────────────────────────────────┐
+│ FOR SENDER (Person sending the file):                           │
+├──────────────────────────────────────────────────────────────────┤
+│ 1. Click "Sender Mode" tab                                       │
+│ 2. Upload your original file                                     │
+│ 3. Click "Generate Verification Code"                            │
+│ 4. Copy the VERIFICATION CODE (16 characters)                    │
+│ 5. Copy the SALT (32 hex characters)                             │
+│ 6. Send BOTH to the receiver (via email, message, etc.)          │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ FOR RECEIVER (Person receiving the file):                        │
+├──────────────────────────────────────────────────────────────────┤
+│ 1. Click "Receiver Mode" tab                                     │
+│ 2. Upload the file you received                                  │
+│ 3. Enter the VERIFICATION CODE from sender                       │
+│ 4. Enter the SALT from sender                                    │
+│ 5. Click "Verify File"                                           │
+│ 6. See result:                                                   │
+│    ✅ "File Integrity Maintained" = File is perfect!             │
+│    ❌ "File Corrupted" = File was modified/corrupted             │
+└──────────────────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 ADDITIONAL FEATURES
+
+• LEARN Section: Click "Learn" to understand SHA-256, HMAC, and salting
+• HELP Section: Click "Help" for detailed instructions
+• DEVELOPED BY: Click to see team information
+• DOWNLOAD REPORT: After verification, download detailed report
+• FILE COMPARISON: Direct comparison of two files without codes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧪 TESTING YOUR APPLICATION
+
+Test Case 1: Same File (Should Match)
+-------------------------------------
+1. Create a test file: "hello.txt" with content "Hello World"
+2. Sender Mode: Upload hello.txt → Copy code & salt
+3. Receiver Mode: Upload the SAME hello.txt → Enter code & salt
+4. Result: ✅ File Integrity Maintained
+
+Test Case 2: Different File (Should NOT Match)
+----------------------------------------------
+1. Sender Mode: Upload original file → Copy code & salt
+2. Edit the file (change even 1 character)
+3. Receiver Mode: Upload edited file → Enter code & salt
+4. Result: ❌ File Corrupted
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 PROJECT DOCUMENTATION
+
+Read these files for more information:
+• README.md - Complete project documentation
+• PROJECT_SUMMARY.md - Quick project overview
+• INSTRUCTIONS.md - Detailed usage instructions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔒 TECHNICAL DETAILS
+
+• SHA-256: Cryptographic hash algorithm (256-bit)
+• HMAC-SHA-256: Message authentication with secret key
+• Salt: 16 random bytes for uniqueness
+• Rate Limit: 10 requests per minute (security)
+• Max File Size: 50 MB
+• Timing-Safe Comparison: Prevents timing attacks
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ TROUBLESHOOTING
+
+Problem: Backend won't start
+Solution: Make sure port 3001 is free, check Node.js is installed
+
+Problem: Frontend can't connect
+Solution: Ensure backend is running on port 3001
+
+Problem: "Rate limit exceeded"
+Solution: Wait 1 minute between requests (security feature)
+
+Problem: File too large
+Solution: Files must be under 50 MB
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎓 FOR YOUR PRESENTATION
+
+Key Points to Mention:
+1. Real-world problem: Verifying file integrity over networks
+2. Cryptographic solution: SHA-256 + HMAC + Salt
+3. Modern web implementation vs traditional C-based approach
+4. Multiple security layers (key protection, timing-safe, rate limiting)
+5. Practical applications: Software downloads, blockchain, secure messaging
+
+Demo Flow:
+1. Explain the problem (file corruption in networks)
+2. Show the Learn section (explain algorithms)
+3. Demo Sender mode (generate verification code)
+4. Demo Receiver mode with same file (✅ success)
+5. Demo with different file (❌ corruption detected)
+6. Download and show the detailed report
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ YOU'RE ALL SET!
+
+Your File Integrity Verification System is ready to use.
+
+Good luck with your Computer Networks project presentation! 🎓
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
