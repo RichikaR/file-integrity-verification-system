@@ -17,9 +17,10 @@ const HMAC_KEY = process.env.HMAC_KEY || "SECRET_KEY_456";
 
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: 'https://richikar.github.io',
   credentials: true
 }));
+
 app.use(express.json());
 
 const limiter = rateLimit({
