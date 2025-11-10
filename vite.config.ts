@@ -3,6 +3,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/file-integrity-verification-system/", // Replace with your repo name
+  base: "/file-integrity-verification-system/", 
   plugins: [react()],
 });
